@@ -56,14 +56,14 @@ module "hub_spoke" {
     }
   }
 
-  enable_firewall           = true
-  firewall_sku_tier         = "Premium"
+  enable_firewall            = true
+  firewall_sku_tier          = "Premium"
   firewall_threat_intel_mode = "Deny"
-  enable_bastion            = true
-  bastion_sku               = "Standard"
-  enable_vpn_gateway        = true
-  vpn_gateway_sku           = "VpnGw1"
-  enable_dns_proxy          = true
+  enable_bastion             = true
+  bastion_sku                = "Standard"
+  enable_vpn_gateway         = true
+  vpn_gateway_sku            = "VpnGw1"
+  enable_dns_proxy           = true
 
   log_analytics_workspace_id = azurerm_log_analytics_workspace.example.id
 

@@ -273,7 +273,7 @@ resource "azurerm_virtual_network_gateway" "vpn" {
   vpn_type            = "RouteBased"
   sku                 = var.vpn_gateway_sku
   active_active       = false
-  enable_bgp          = false
+  bgp_enabled         = false
   tags                = var.tags
 
   ip_configuration {
@@ -345,7 +345,7 @@ resource "azurerm_route_table" "spoke" {
   name                          = "${var.name_prefix}-${each.key}-rt"
   location                      = var.location
   resource_group_name           = var.resource_group_name
-  disable_bgp_route_propagation = true
+  bgp_route_propagation_enabled = false
   tags                          = var.tags
 
   route {
@@ -393,9 +393,8 @@ resource "azurerm_monitor_diagnostic_setting" "firewall" {
     category = "AzureFirewallDnsProxy"
   }
 
-  metric {
+  enabled_metric {
     category = "AllMetrics"
-    enabled  = true
   }
 }
 
@@ -410,8 +409,7 @@ resource "azurerm_monitor_diagnostic_setting" "bastion" {
     category = "BastionAuditLogs"
   }
 
-  metric {
+  enabled_metric {
     category = "AllMetrics"
-    enabled  = true
   }
 }

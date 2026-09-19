@@ -27,9 +27,9 @@ module "hub_spoke" {
     }
   }
 
-  enable_firewall    = true
-  enable_bastion     = true
-  enable_vpn_gateway = false
+  enable_firewall     = true
+  enable_bastion      = true
+  enable_vpn_gateway  = false
   enable_expressroute = false
   enable_route_server = false
 
