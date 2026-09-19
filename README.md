@@ -139,7 +139,7 @@ module "hub_spoke" {
 | Name | Version |
 |------|---------|
 | terraform | >= 1.5.0 |
-| azurerm | >= 3.80.0 |
+| azurerm | >= 5.0.0, < 6.0.0 |
 
 ## Inputs
 
